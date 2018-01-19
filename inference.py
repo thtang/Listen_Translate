@@ -66,9 +66,8 @@ test_data_pad_expand = np.repeat(test_data_pad, 4,axis=0)
 print(test_caption_pad.shape)
 print(test_data_pad_expand .shape)
 
-model_names = ["model2_aug1_1V5_2layers_512_0.h5","model_aug1_1V5_2layers_512_0.h5","model4_aug1_1V5_2layers_512_2.h5",
-				"model4_aug1_1V5_2layers_512_3.h5",	"model4_aug1_1V5_2layers_512_4.h5",
-				"model3_aug1_1V5_2layers_512_0.h5","model4_aug1_1V5_2layers_512_1.h5","model4_aug1_1V5_2layers_512_0.h5"]
+model_names = ["model2_aug1_1V5_2layers_512_0.h5","model_aug1_1V5_2layers_512_0.h5",
+				"model3_aug1_1V5_2layers_512_0.h5"]
 
 p = []
 for name in model_names:
