@@ -66,8 +66,15 @@ test_data_pad_expand = np.repeat(test_data_pad, 4,axis=0)
 print(test_caption_pad.shape)
 print(test_data_pad_expand .shape)
 
-model_names = ["model2_aug1_1V5_2layers_512_0.h5","model_aug1_1V5_2layers_512_0.h5",
-				"model3_aug1_1V5_2layers_512_0.h5"]
+model_names = ["model_aug1_1V5_2layers_512_2.h5", "model_aug1_1V5_2layers_512_3.h5",
+                "model2_aug1_1V5_2layers_512_2.h5", "model2_aug1_1V5_2layers_512_3.h5",
+                "model3_aug1_1V5_2layers_512_2.h5", "model3_aug1_1V5_2layers_512_1.h5",
+                "model3_aug1_1V5_2layers_512_2.h5", "model4_randomAug1_1V5_2layers_512_120.h5",
+                "model4_randomAug1_1V5_2layers_512_119.h5","model4_randomAug1_1V5_2layers_512_118.h5",
+                "model5_randomAug1_1V5_2layers_512_74.h5","model5_randomAug1_1V5_2layers_512_70.h5",
+                "model5_randomAug1_1V5_2layers_512_72.h5","model5_randomAug1_1V5_2layers_512_84.h5",
+                "model6_randomAug1_1V5_2layers_512_158.h5","model6_randomAug1_1V5_2layers_512_159.h5",
+                "model6_randomAug1_1V5_2layers_512_160.h5","model6_randomAug1_1V5_2layers_512_162.h5"]
 
 p = []
 for name in model_names:
