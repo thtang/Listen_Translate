@@ -45,10 +45,6 @@ with open("data/test.csv","r") as f:
     test_sentences = [sent.split(" ") for sent in test_corpus.split(",")]
     test_corpus = test_corpus.replace(",", " ")
 
-
-# In[30]:
-
-
 # chinese character level tokenizer
 tokenizer = Tokenizer(num_words=None,filters='\n', lower=True, split=" ", char_level=False)
 tokenizer.fit_on_texts(train_caption + [test_corpus])
