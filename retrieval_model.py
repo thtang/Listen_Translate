@@ -1,6 +1,5 @@
 import numpy as np
 import keras.backend as K
-import gensim
 import keras
 from sklearn.model_selection import train_test_split
 from keras.models import Model, load_model
@@ -17,14 +16,24 @@ import pandas as pd
 import os, sys
 import pickle
 
-os.environ['CUDA_VISIBLE_DEVICES'] = str(sys.argv[1])
-print("use GPU ",str(sys.argv[1]))
-train_data = np.load("data/train.data")
-test_data = np.load("data/test.data")
+os.environ['CUDA_VISIBLE_DEVICES'] = str(sys.argv[6])
+
+train_data_path = sys.argv[1]
+test_data_path = sys.argv[2]
+train_caption_path = sys.argv[3]
+test_caption_path = sys.argv[4]
+
+output_path = sys.argv[5]
+
+print("use GPU ",str(sys.argv[6]))
+
+train_data = np.load(train_data_path)
+test_data = np.load(test_data_path)
 print(len(train_data),"個 training 音檔")
 print(len(test_data),"個 testing 音檔")
 max_frame_length = np.max([len(sample) for sample in train_data])
 print("max langth of wav:",max_frame_length)
+
 
 aug_train_data = []
 for data in train_data:
@@ -34,11 +43,11 @@ train_data = train_data + aug_train_data
 
 
 # load caption
-with open("data/train.caption","r") as f:
+with open(train_caption_path,"r") as f:
     train_caption = f.readlines()
     train_caption = [sent.strip() for sent in train_caption]
     train_sentences = [sent.split(" ") for sent in train_caption]
-with open("data/test.csv","r") as f:
+with open(test_caption_path,"r") as f:
     test_choice = f.readlines()
     test_choice = [sent.strip() for sent in test_choice]
     test_corpus = ",".join(test_choice)
